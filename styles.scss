@@ -1,0 +1,285 @@
+// Subdued Sophistication
+// Urban Sophisticate
+$primary-color: #474747; // Gunmetal Gray
+$secondary-color: #F7F7F7; // Alabaster White
+$accent-color: #C2505A; // Brick Red
+$dark-text: #1E1E1E; // Onyx Black
+$link-color: #7C99AC; // Sky Blue Gray
+$hover-link-color: #5C7D92; // Steel Blue
+$light-text: #FFFFFF; // Pure White
+
+// Define color variables, assuming they're not set in your previous code
+$linkedin-color: #0077b5; // LinkedIn Blue
+$github-color: #333;     // GitHub Grey
+
+
+// Base styles
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $secondary-color;
+    color: $dark-text;
+}
+
+h1, h2 {
+    font-weight: bold;
+    color: $primary-color;
+}
+
+p {
+    font-size: 1rem;
+    color: $primary-color;
+}
+
+
+
+// Enhancing Bootstrap's card and grid for projects
+.project-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    border: none;
+    border-radius: 0.25rem; // Keeping Bootstrap's default radius
+
+    &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .project-tags {
+        .tag {
+            display: inline-block;
+            background-color: $accent-color;
+            color: $light-text;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            font-size: 0.85rem;
+        }
+    }
+
+    .project-description {
+        color: $primary-color;
+        font-size: 0.9rem;
+    }
+}
+
+.project-img-link {
+    display: block;
+    overflow: hidden;
+
+    img {
+        transition: transform 0.20s ease-in-out;
+    }
+
+    &:hover img {
+        transform: scale(1.2); // Zoom effect on hover
+    }
+}
+
+.title {
+    padding-bottom: 5%;
+}
+
+.project-title {
+    font-size: 1.25rem; 
+    font-weight: bold; 
+    margin-bottom: 15px;
+    text-decoration: underline; 
+    color: $primary-color; 
+}
+// Button styling
+.btn-primary {
+    background-color: $primary-color;
+    color: $light-text;
+    padding: 0.5rem 1rem; 
+    font-size: 0.75rem; 
+    border: none;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease; // Smooth transition for background and transform
+
+    &:hover {
+        background-color: darken($primary-color, 30%);
+    }
+}
+
+
+// Social Icons Styling
+.social-icons {
+    margin-top: 1rem; // Extra spacing above the social icons container
+
+    a {
+        margin-right: 0.75rem; // Space between icons
+    }
+
+    i {
+        transition: color 0.3s ease; // Smooth transition for color change
+
+        &.text-linkedin {
+            color: $linkedin-color; // Initial color for LinkedIn icon
+
+            &:hover {
+                color: darken($linkedin-color, 10%); // Darken color on hover
+            }
+        }
+
+        &.text-github {
+            color: $github-color; // Initial color for GitHub icon
+
+            &:hover {
+                color: darken($github-color, 10%); // Darken color on hover
+            }
+        }
+    }
+}
+
+.skills-section {
+    background-color: $secondary-color;
+    padding: 1.5rem; 
+    border-radius: 5px; 
+
+    h3 {
+        font-weight: bold;
+        color: $dark-text; 
+        font-size: 1.2rem; 
+        margin-bottom: 0.75rem;
+    }
+
+    ul {
+        list-style-type: none; // Clean look without list bullets
+        padding: 0;
+
+        li {
+            color: $dark-text; 
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: none; 
+        }
+    }
+}
+
+// Blog Posts
+.blog-post {
+    max-width: 540px; 
+    margin: auto; 
+
+    .blog-title {
+        color: $link-color; 
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .blog-image-container {
+        width: 100%; 
+        overflow: hidden;
+        position: relative;
+        padding-top: 20%; 
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .btn-read-more {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%; 
+        height: 100%; 
+        background-color: $link-color;
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $hover-link-color;
+            color: #f4f4f7;
+            text-decoration: none;
+        }
+    }
+}
+
+// Responsive Media Queries
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .title {
+        padding-bottom: 5%;
+        font-size: 2rem;
+    }
+
+    p, .tech-item {
+        font-size: 0.875rem; 
+    }
+
+    .project-title {
+        font-size: 1.25rem; 
+    }
+
+    .blog-post, .projects img.img-fluid {
+        height: auto; 
+    }
+
+    .btn-read-more {
+        width: 60%;
+        font-size: 0.875rem;
+    }
+
+    .blog-post {
+        max-width: 100%; 
+    }
+
+    .row > [class*='col-'] {
+        margin-bottom: 50px; 
+    }
+    .skills-section {
+        padding: 1rem; 
+        h3 {
+            font-size: 0.9rem; 
+        }
+
+        ul li {
+            padding: 0.4rem; 
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1rem; 
+    }
+
+    .title {
+        font-size: 1.25rem;
+        padding-bottom: 5%;
+    }
+    
+    p, .tech-item {
+        font-size: 0.75rem;
+    }
+}
